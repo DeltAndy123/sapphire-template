@@ -1,6 +1,6 @@
 import { Command, ChatInputCommand, Events } from '@sapphire/framework';
 
-export class CmdNameCommand extends Command {
+export class TestJoinCommand extends Command {
   public constructor(context: Command.Context, options: Command.Options) {
     super(context, {
       ...options,
@@ -28,7 +28,7 @@ export class CmdNameCommand extends Command {
 
     const user = interaction.options.getUser('user') || interaction.user;
 
-    global.client.emit(Events.GuildMemberAdd as any, interaction.guild?.members.cache.get(user.id));
+    this.container.client.emit(Events.GuildMemberAdd as any, interaction.guild?.members.cache.get(user.id));
 
     interaction.reply({ content: 'Emitted member join', ephemeral: true });
 
