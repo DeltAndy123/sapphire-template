@@ -6,7 +6,7 @@ import { GatewayIntentBits } from 'discord.js';
 
 dotenv.config();
 
-mongoose.connect(process.env.MONGO_URI!)
+if (process.env.MONGO_URI) mongoose.connect(process.env.MONGO_URI)
 
 const client = new SapphireClient({
   intents: [
