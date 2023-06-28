@@ -1,3 +1,3 @@
-# .env # Uncomment this after you have added the info in the .env file
+.env
 node_modules
 dist/
